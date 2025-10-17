@@ -1,0 +1,344 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Storage — last</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="topbar">
+  <h1>Storage</h1>
+  <div class="controls">
+    <form id="createFolderForm" action="action.php" method="post" class="inline">
+      <input type="hidden" name="action" value="create_folder">
+      <input type="hidden" name="current_path" value="last">
+      <input name="folder_name" placeholder="New folder name" required>
+      <button type="submit">Create</button>
+    </form>
+
+    <form id="uploadForm" action="action.php" method="post" enctype="multipart/form-data" class="inline">
+      <input type="hidden" name="action" value="upload">
+      <input type="hidden" name="current_path" value="last">
+      <input type="file" name="files[]" multiple>
+      <button type="submit">Upload</button>
+    </form>
+
+    <div class="btn-group">
+      <button id="copyBtn" class="op-btn" data-op="copy">Copy</button>
+      <button id="cutBtn" class="op-btn" data-op="cut">Cut</button>
+      <form action="action.php" method="post" id="pasteForm" class="inline">
+        <input type="hidden" name="action" value="paste">
+        <input type="hidden" name="current_path" value="last">
+        <button type="submit" id="pasteBtn">Paste</button>
+      </form>
+      <button id="deleteBtn">Delete</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs">
+          <a href="?path=">Home</a>
+       /           <a href="?path=last">last</a>
+            </nav>
+
+  <section class="listing">
+    <form id="itemsForm" action="action.php" method="post">
+      <input type="hidden" name="current_path" value="last">
+      <table class="file-table" role="grid">
+        <thead>
+          <tr>
+            <th><input id="selectAll" type="checkbox"></th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Size</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/Assignment_02_Part_A_Day_01.nb"></td>
+            <td class="name">
+              <a href="last/Assignment_02_Part_A_Day_01.nb" target="_blank">
+                Assignment_02_Part_A_Day_01.nb              </a>
+            </td>
+
+            <td>nb</td>
+            <td>206.28 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/Assignment_02_Part_A_Day_01.nb">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2FAssignment_02_Part_A_Day_01.nb" download>Download</a>
+            </td>
+          </tr>
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/Assignment_02_Part_A_Day_1.nb"></td>
+            <td class="name">
+              <a href="last/Assignment_02_Part_A_Day_1.nb" target="_blank">
+                Assignment_02_Part_A_Day_1.nb              </a>
+            </td>
+
+            <td>nb</td>
+            <td>368.36 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/Assignment_02_Part_A_Day_1.nb">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2FAssignment_02_Part_A_Day_1.nb" download>Download</a>
+            </td>
+          </tr>
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/Assignment_03_A_practiceAE-123-051.nb"></td>
+            <td class="name">
+              <a href="last/Assignment_03_A_practiceAE-123-051.nb" target="_blank">
+                Assignment_03_A_practiceAE-123-051.nb              </a>
+            </td>
+
+            <td>nb</td>
+            <td>158.21 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/Assignment_03_A_practiceAE-123-051.nb">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2FAssignment_03_A_practiceAE-123-051.nb" download>Download</a>
+            </td>
+          </tr>
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/Assignment_3A_MA_Session_2024-2025.pdf"></td>
+            <td class="name">
+              <a href="last/Assignment_3A_MA_Session_2024-2025.pdf" target="_blank">
+                Assignment_3A_MA_Session_2024-2025.pdf              </a>
+            </td>
+
+            <td>pdf</td>
+            <td>236.93 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/Assignment_3A_MA_Session_2024-2025.pdf">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2FAssignment_3A_MA_Session_2024-2025.pdf" download>Download</a>
+            </td>
+          </tr>
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/Class_06_Assignment_01_Day_01.nb"></td>
+            <td class="name">
+              <a href="last/Class_06_Assignment_01_Day_01.nb" target="_blank">
+                Class_06_Assignment_01_Day_01.nb              </a>
+            </td>
+
+            <td>nb</td>
+            <td>52.29 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/Class_06_Assignment_01_Day_01.nb">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2FClass_06_Assignment_01_Day_01.nb" download>Download</a>
+            </td>
+          </tr>
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/Class_06_Assignment_01_Day_01without_3_13.nb"></td>
+            <td class="name">
+              <a href="last/Class_06_Assignment_01_Day_01without_3_13.nb" target="_blank">
+                Class_06_Assignment_01_Day_01without_3_13.nb              </a>
+            </td>
+
+            <td>nb</td>
+            <td>47.13 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/Class_06_Assignment_01_Day_01without_3_13.nb">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2FClass_06_Assignment_01_Day_01without_3_13.nb" download>Download</a>
+            </td>
+          </tr>
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/Class_06_Assignment_01_Day_02.nb"></td>
+            <td class="name">
+              <a href="last/Class_06_Assignment_01_Day_02.nb" target="_blank">
+                Class_06_Assignment_01_Day_02.nb              </a>
+            </td>
+
+            <td>nb</td>
+            <td>44.12 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/Class_06_Assignment_01_Day_02.nb">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2FClass_06_Assignment_01_Day_02.nb" download>Download</a>
+            </td>
+          </tr>
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/Md_Asraful_Islam_AE-123-051.nb"></td>
+            <td class="name">
+              <a href="last/Md_Asraful_Islam_AE-123-051.nb" target="_blank">
+                Md_Asraful_Islam_AE-123-051.nb              </a>
+            </td>
+
+            <td>nb</td>
+            <td>124.59 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/Md_Asraful_Islam_AE-123-051.nb">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2FMd_Asraful_Islam_AE-123-051.nb" download>Download</a>
+            </td>
+          </tr>
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/asraful 1.nb"></td>
+            <td class="name">
+              <a href="last/asraful 1.nb" target="_blank">
+                asraful 1.nb              </a>
+            </td>
+
+            <td>nb</td>
+            <td>304.03 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/asraful 1.nb">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2Fasraful+1.nb" download>Download</a>
+            </td>
+          </tr>
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/class_01.nb"></td>
+            <td class="name">
+              <a href="last/class_01.nb" target="_blank">
+                class_01.nb              </a>
+            </td>
+
+            <td>nb</td>
+            <td>141.29 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/class_01.nb">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2Fclass_01.nb" download>Download</a>
+            </td>
+          </tr>
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/class_03 again.nb"></td>
+            <td class="name">
+              <a href="last/class_03 again.nb" target="_blank">
+                class_03 again.nb              </a>
+            </td>
+
+            <td>nb</td>
+            <td>55.52 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/class_03 again.nb">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2Fclass_03+again.nb" download>Download</a>
+            </td>
+          </tr>
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/class_03.nb"></td>
+            <td class="name">
+              <a href="last/class_03.nb" target="_blank">
+                class_03.nb              </a>
+            </td>
+
+            <td>nb</td>
+            <td>28.94 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/class_03.nb">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2Fclass_03.nb" download>Download</a>
+            </td>
+          </tr>
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/class_04_Assignment.nb"></td>
+            <td class="name">
+              <a href="last/class_04_Assignment.nb" target="_blank">
+                class_04_Assignment.nb              </a>
+            </td>
+
+            <td>nb</td>
+            <td>179.79 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/class_04_Assignment.nb">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2Fclass_04_Assignment.nb" download>Download</a>
+            </td>
+          </tr>
+                    <tr class="row file">
+            <td><input type="checkbox" name="items[]" value="last/class_05_assignment_0_day_02.nb"></td>
+            <td class="name">
+              <a href="last/class_05_assignment_0_day_02.nb" target="_blank">
+                class_05_assignment_0_day_02.nb              </a>
+            </td>
+
+            <td>nb</td>
+            <td>67.94 KB</td>
+            <td>
+              <button type="button" class="renameBtn" data-name="last/class_05_assignment_0_day_02.nb">Rename</button>
+              <a class="downloadBtn" href="download.php?file=last%2Fclass_05_assignment_0_day_02.nb" download>Download</a>
+            </td>
+          </tr>
+          
+                  </tbody>
+      </table>
+
+      <input type="hidden" name="action" id="actionField" value="">
+    </form>
+  </section>
+
+  <aside class="sidebar">
+    <h3>Clipboard</h3>
+          <p>Clipboard is empty</p>
+      </aside>
+</main>
+
+<!-- rename modal (simple) -->
+<div id="renameModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <h3>Rename</h3>
+    <form id="renameForm" action="action.php" method="post">
+      <input type="hidden" name="action" value="rename">
+      <input type="hidden" name="current_path" value="last">
+      <input type="hidden" name="item" id="renameItem">
+      <input name="new_name" placeholder="New name" required>
+      <div class="modal-actions">
+        <button type="submit">Rename</button>
+        <button type="button" id="renameCancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+/* basic client behavior */
+document.getElementById('selectAll').addEventListener('change', function(e){
+  const checked = e.target.checked;
+  document.querySelectorAll('input[name="items[]"]').forEach(c => c.checked = checked);
+});
+
+document.querySelectorAll('.op-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const op = btn.dataset.op;
+    const checked = Array.from(document.querySelectorAll('input[name="items[]"]:checked')).map(n => n.value);
+    if (checked.length === 0) { alert('Select at least one item'); return; }
+    // submit clipboard action
+    const form = document.createElement('form');
+    form.method = 'post';
+    form.action = 'action.php';
+    form.style.display = 'none';
+    form.innerHTML = '<input type="hidden" name="action" value="'+op+'"><input type="hidden" name="current_path" value="last">'
+    checked.forEach(i => {
+      const ip = document.createElement('input');
+      ip.type = 'hidden'; ip.name = 'items[]'; ip.value = i;
+      form.appendChild(ip);
+    });
+    document.body.appendChild(form);
+    form.submit();
+  });
+});
+
+document.getElementById('deleteBtn').addEventListener('click', () => {
+  const checked = Array.from(document.querySelectorAll('input[name="items[]"]:checked')).map(n => n.value);
+  if (checked.length === 0) { alert('Select items to delete'); return; }
+  if (!confirm('Delete selected items? This cannot be undone.')) return;
+  const f = document.createElement('form');
+  f.method='post'; f.action='action.php';
+  f.style.display='none';
+  f.innerHTML = '<input type="hidden" name="action" value="delete"><input type="hidden" name="current_path" value="last">';
+  checked.forEach(i => { const ip=document.createElement('input'); ip.type='hidden'; ip.name='items[]'; ip.value=i; f.appendChild(ip);});
+  document.body.appendChild(f); f.submit();
+});
+
+// rename modal flow
+document.querySelectorAll('.renameBtn').forEach(b=>{
+  b.addEventListener('click', () => {
+    const item = b.dataset.name;
+    document.getElementById('renameItem').value = item;
+    document.getElementById('renameModal').style.display = 'block';
+    document.getElementById('renameModal').setAttribute('aria-hidden','false');
+  });
+});
+document.getElementById('renameCancel').addEventListener('click', () => {
+  document.getElementById('renameModal').style.display = 'none';
+  document.getElementById('renameModal').setAttribute('aria-hidden','true');
+});
+</script>
+</body>
+</html>
